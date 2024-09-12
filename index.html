@@ -58,11 +58,11 @@
           <a class="navbar-brand" href="#">
             <img src="images/cinema logo.jpg" alt="website logo" style="width:70px; height: 65px; object-fit: cover;" class="rounded-circle">
           </a>
-          <span class="gradient-text navbar-text fs-5" sty>CinemaPalace</span>
+          <span class="gradient-text navbar-text fs-5 position-relative">CinemaPalace</span>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="mynavbar">
+          <div class="collapse navbar-collapse ms-lg-3" id="mynavbar">
             <ul class="navbar-nav me-auto">
               <li class="nav-item dropdown" data-bs-theme="dark">
                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" >
@@ -467,7 +467,7 @@
         <div class="p-3 row h-25">
           <h4 class="col-6 pe-0 text-light" style="font-variant: small-caps;">the lion king</h4>
           <button class="btn btn-custom col-5 ms-auto">Know more</button>
-          <p class="mt-2 mt-md-3 text-light ">Animation, Adventure, Drama, Family</p>
+          <p class="mt-2 mt-lg-3 text-light ">Animation, Adventure, Drama, Family</p>
         </div>
       </div>
       <div class="popular-movies box-shadow position-relative rounded-5 overflow-hidden mx-auto col-10 col-sm-9 col-md-5 col-lg-4 col-xl-3 px-0">
@@ -475,7 +475,7 @@
         <div class="p-3 row h-25">
           <h4 class="col-6 pe-0 text-light" style="font-variant: small-caps; ">titanic</h4>
           <button class="btn btn-custom col-5 ms-auto">Know more</button>
-          <p class="mt-2 mt-md-3 text-light">Romance, Drama, Historical, Disaster</p>
+          <p class="mt-2 mt-lg-3 text-light">Romance, Drama, Historical, Disaster</p>
         </div>
       </div>
   </div>
@@ -810,19 +810,27 @@ var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
 })
 
  const copies=document.querySelectorAll(".copy");
+
  copies.forEach(function(item){
+  
    item.addEventListener("mouseenter", function(){
       
     item.style.setProperty("--after-visibility","visible")
-    item.addEventListener("click" ,function(){
+
+    setTimeout(() => {
+      item.style.setProperty("--after-visibility","hidden")
+    }, 1000);
+  
+   })
+
+   item.addEventListener("click" ,function(){
       item.style.setProperty("--after-visibility","hidden")
     })
-    item.addEventListener("mouseleave", function(){
+    
+   item.addEventListener("mouseleave", function(){
     item.style.setProperty("--after-visibility","hidden")
-   })
-
-   })
-
+   }) 
+  
  })
 
   // Initialize the popover
